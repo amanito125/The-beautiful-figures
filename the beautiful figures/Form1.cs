@@ -112,5 +112,10 @@ namespace the_beautiful_figures
             }
             MessageBox.Show("Completed visualisation of Circle! Created rectangle: " + randomNum);
         }
+
+        private void btnRestart_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
     }
 }

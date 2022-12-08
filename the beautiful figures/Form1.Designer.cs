@@ -33,21 +33,22 @@
             this.btnTriangle = new System.Windows.Forms.Button();
             this.btnSquare = new System.Windows.Forms.Button();
             this.btnCircle = new System.Windows.Forms.Button();
+            this.btnRestart = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnRectangle
             // 
-            this.btnRectangle.Location = new System.Drawing.Point(13, 17);
+            this.btnRectangle.Location = new System.Drawing.Point(12, 680);
             this.btnRectangle.Name = "btnRectangle";
             this.btnRectangle.Size = new System.Drawing.Size(177, 63);
             this.btnRectangle.TabIndex = 0;
-            this.btnRectangle.Text = "btnRectangle";
+            this.btnRectangle.Text = "Rectangle";
             this.btnRectangle.UseVisualStyleBackColor = true;
             this.btnRectangle.Click += new System.EventHandler(this.btnRectangle_Click);
             // 
             // btnTriangle
             // 
-            this.btnTriangle.Location = new System.Drawing.Point(13, 86);
+            this.btnTriangle.Location = new System.Drawing.Point(195, 680);
             this.btnTriangle.Name = "btnTriangle";
             this.btnTriangle.Size = new System.Drawing.Size(177, 63);
             this.btnTriangle.TabIndex = 1;
@@ -57,7 +58,7 @@
             // 
             // btnSquare
             // 
-            this.btnSquare.Location = new System.Drawing.Point(13, 155);
+            this.btnSquare.Location = new System.Drawing.Point(378, 680);
             this.btnSquare.Name = "btnSquare";
             this.btnSquare.Size = new System.Drawing.Size(177, 63);
             this.btnSquare.TabIndex = 2;
@@ -67,7 +68,7 @@
             // 
             // btnCircle
             // 
-            this.btnCircle.Location = new System.Drawing.Point(13, 224);
+            this.btnCircle.Location = new System.Drawing.Point(561, 680);
             this.btnCircle.Name = "btnCircle";
             this.btnCircle.Size = new System.Drawing.Size(177, 63);
             this.btnCircle.TabIndex = 3;
@@ -75,11 +76,23 @@
             this.btnCircle.UseVisualStyleBackColor = true;
             this.btnCircle.Click += new System.EventHandler(this.btnCircle_Click);
             // 
+            // btnRestart
+            // 
+            this.btnRestart.Location = new System.Drawing.Point(1538, 680);
+            this.btnRestart.Name = "btnRestart";
+            this.btnRestart.Size = new System.Drawing.Size(177, 63);
+            this.btnRestart.TabIndex = 4;
+            this.btnRestart.Text = "Restart";
+            this.btnRestart.UseVisualStyleBackColor = true;
+            this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1708, 792);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1727, 755);
+            this.Controls.Add(this.btnRestart);
             this.Controls.Add(this.btnCircle);
             this.Controls.Add(this.btnSquare);
             this.Controls.Add(this.btnTriangle);
@@ -100,5 +113,6 @@
         private Button btnTriangle;
         private Button btnSquare;
         private Button btnCircle;
+        private Button btnRestart;
     }
 }
