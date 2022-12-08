@@ -1,5 +1,8 @@
 using System.Drawing;
+using System.Reflection;
+using System.Security.Policy;
 using System.Threading;
+using System.Drawing;
 
 namespace the_beautiful_figures
 {
@@ -45,7 +48,7 @@ namespace the_beautiful_figures
 
         public void SquareThread()
         {
-            int randomNum = new Random().Next(1, 10);
+            int randomNum = new Random().Next(1, 100);
             for (int i = 0; i < randomNum; i++)
             {
                 Random rnd = new Random();
@@ -59,20 +62,31 @@ namespace the_beautiful_figures
         public void TriangleThread()
         {
             
-            int randomNum = new Random().Next(1, 10);
+            int randomNum = new Random().Next(1, 100);
             for (int i = 0; i < randomNum; i++)
             {
                 Random rnd = new Random();
                 Color randomColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
+                Pen randomPen = new Pen(randomColor, 4);
                 int n = new Random().Next(20, 170);
-                this.CreateGraphics().DrawRectangle(new Pen(randomColor, 4), new Rectangle(new Random().Next(0, this.Width), new Random().Next(0, this.Height), n, n));
+                PointF point1 = new PointF(new Random().Next(0, this.Width) + new Random().Next(20, 170), new Random().Next(0, this.Height) + new Random().Next(20, 170));
+                PointF point2 = new PointF(new Random().Next(0, this.Width) + new Random().Next(20, 170), new Random().Next(0, this.Height) + new Random().Next(20, 170));
+                PointF point3 = new PointF(new Random().Next(0, this.Width) + new Random().Next(20, 170), new Random().Next(0, this.Height) + new Random().Next(20, 170));
+                PointF[] curvePoints =
+                         {
+                 point1,
+                 point2,
+                 point3,
+             };
+
+                this.CreateGraphics().DrawPolygon(randomPen, curvePoints);
                 Thread.Sleep(2000);
             }
             MessageBox.Show("Completed visualisation of Triangle! Created triangles " + randomNum);
         }
         public void RectangleThread()
         {
-            int randomNum = new Random().Next(1, 10);
+            int randomNum = new Random().Next(1, 100);
             for (int i = 0; i < randomNum; i++)
             {
                 Random rnd = new Random();
@@ -87,7 +101,7 @@ namespace the_beautiful_figures
 
         public void CircleThread()
         {
-            int randomNum = new Random().Next(1, 10);
+            int randomNum = new Random().Next(1, 100);
             for (int i = 0; i < randomNum; i++)
             {
                 Random rnd = new Random();
