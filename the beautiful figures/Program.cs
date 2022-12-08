@@ -12,6 +12,7 @@ namespace the_beautiful_figures
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
+            // Define the border style of the form to a dialog box.
         }
     }
 }
