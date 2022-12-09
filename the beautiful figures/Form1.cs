@@ -58,7 +58,7 @@ namespace the_beautiful_figures
                 Random rnd = new Random();
                 Color randomColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
                 int n = new Random().Next(20, 170);
-                this.CreateGraphics().DrawRectangle(new Pen(randomColor, 4), new Rectangle(new Random().Next(250, this.Width - 50), new Random().Next(0, this.Height - 50), n, n));
+                this.CreateGraphics().DrawRectangle(new Pen(randomColor, 4), new Rectangle(new Random().Next(200, this.Width - 50), new Random().Next(0, this.Height - 50), n, n));
                 createdFig += 1;
                 Thread.Sleep(1000);
                
@@ -75,9 +75,9 @@ namespace the_beautiful_figures
                 Color randomColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
                 Pen randomPen = new Pen(randomColor, 4);
                 int n = new Random().Next(20, 170);
-                PointF point1 = new PointF(new Random().Next(250, this.Width) + new Random().Next(20, 170), new Random().Next(0, this.Height - 50) + new Random().Next(20, 170));
-                PointF point2 = new PointF(new Random().Next(250, this.Width) + new Random().Next(20, 170), new Random().Next(0, this.Height - 50) + new Random().Next(20, 170));
-                PointF point3 = new PointF(new Random().Next(250, this.Width) + new Random().Next(20, 170), new Random().Next(0, this.Height - 50) + new Random().Next(20, 170));
+                PointF point1 = new PointF(new Random().Next(200, this.Width) + new Random().Next(20, 170), new Random().Next(0, this.Height - 50) + new Random().Next(20, 170));
+                PointF point2 = new PointF(new Random().Next(200, this.Width) + new Random().Next(20, 170), new Random().Next(0, this.Height - 50) + new Random().Next(20, 170));
+                PointF point3 = new PointF(new Random().Next(200, this.Width) + new Random().Next(20, 170), new Random().Next(0, this.Height - 50) + new Random().Next(20, 170));
                 PointF[] curvePoints =
                          {
                  point1,
@@ -100,7 +100,7 @@ namespace the_beautiful_figures
                 Color randomColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
                 int b = new Random().Next(20, 170);
                 int n = new Random().Next(20, 170);
-                this.CreateGraphics().DrawRectangle(new Pen(randomColor, 4), new Rectangle(new Random().Next(250, this.Width), new Random().Next(0, this.Height - 50), n, b));
+                this.CreateGraphics().DrawRectangle(new Pen(randomColor, 4), new Rectangle(new Random().Next(200, this.Width), new Random().Next(0, this.Height - 50), n, b));
                 createdFig += 1;
                 Thread.Sleep(3000);
             }
@@ -115,11 +115,26 @@ namespace the_beautiful_figures
                 Random rnd = new Random();
                 Color randomColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
                 int n = new Random().Next(20, 170);
-                this.CreateGraphics().DrawEllipse(new Pen(randomColor, 4), new Random().Next(250, this.Width), new Random().Next(0, this.Height - 50), n, n);
+                this.CreateGraphics().DrawEllipse(new Pen(randomColor, 4), new Random().Next(200, this.Width), new Random().Next(0, this.Height - 50), n, n);
                 createdFig += 1;
                 Thread.Sleep(4000);
             }
             MessageBox.Show("Completed visualisation of Circle! Created rectangle: " + randomNum);
+        }
+
+        private void lblCount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCount_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Count of all currently created figures: " + createdFig);
         }
     }
 }

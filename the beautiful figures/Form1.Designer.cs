@@ -35,11 +35,16 @@
             this.btnCircle = new System.Windows.Forms.Button();
             this.btnRestart = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCount = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRectangle
             // 
+            this.btnRectangle.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnRectangle.FlatAppearance.BorderSize = 2;
+            this.btnRectangle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRectangle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnRectangle.Location = new System.Drawing.Point(12, 12);
             this.btnRectangle.Name = "btnRectangle";
             this.btnRectangle.Size = new System.Drawing.Size(177, 63);
@@ -50,6 +55,9 @@
             // 
             // btnTriangle
             // 
+            this.btnTriangle.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnTriangle.FlatAppearance.BorderSize = 2;
+            this.btnTriangle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTriangle.Location = new System.Drawing.Point(12, 112);
             this.btnTriangle.Name = "btnTriangle";
             this.btnTriangle.Size = new System.Drawing.Size(177, 63);
@@ -60,6 +68,9 @@
             // 
             // btnSquare
             // 
+            this.btnSquare.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnSquare.FlatAppearance.BorderSize = 2;
+            this.btnSquare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSquare.Location = new System.Drawing.Point(12, 212);
             this.btnSquare.Name = "btnSquare";
             this.btnSquare.Size = new System.Drawing.Size(177, 63);
@@ -70,6 +81,9 @@
             // 
             // btnCircle
             // 
+            this.btnCircle.FlatAppearance.BorderColor = System.Drawing.Color.Fuchsia;
+            this.btnCircle.FlatAppearance.BorderSize = 2;
+            this.btnCircle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCircle.Location = new System.Drawing.Point(12, 312);
             this.btnCircle.Name = "btnCircle";
             this.btnCircle.Size = new System.Drawing.Size(177, 63);
@@ -80,6 +94,8 @@
             // 
             // btnRestart
             // 
+            this.btnRestart.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnRestart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRestart.Location = new System.Drawing.Point(12, 680);
             this.btnRestart.Name = "btnRestart";
             this.btnRestart.Size = new System.Drawing.Size(177, 63);
@@ -90,11 +106,24 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.pictureBox1.Location = new System.Drawing.Point(-46, -16);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(250, 840);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // btnCount
+            // 
+            this.btnCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCount.Location = new System.Drawing.Point(12, 445);
+            this.btnCount.Name = "btnCount";
+            this.btnCount.Size = new System.Drawing.Size(177, 63);
+            this.btnCount.TabIndex = 6;
+            this.btnCount.Text = "Count figures";
+            this.btnCount.UseVisualStyleBackColor = true;
+            this.btnCount.Click += new System.EventHandler(this.btnCount_Click);
             // 
             // Form1
             // 
@@ -102,6 +131,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1727, 755);
+            this.Controls.Add(this.btnCount);
             this.Controls.Add(this.btnTriangle);
             this.Controls.Add(this.btnRectangle);
             this.Controls.Add(this.btnRestart);
@@ -129,5 +159,7 @@
         private Button btnCircle;
         private Button btnRestart;
         private PictureBox pictureBox1;
+        private Button btnCount;
+        private Label lblCount;
     }
 }
