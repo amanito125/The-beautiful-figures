@@ -12,17 +12,21 @@ namespace the_beautiful_figures
         {
             InitializeComponent();
         }
-
+       
         Thread th;
         Thread th1;
         Thread th2;
         Thread th3;
+        int createdFig = 0;
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
-
+        private void btnRestart_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
         private void btnRectangle_Click(object sender, EventArgs e)
         {
             th2 = new Thread(RectangleThread);
@@ -54,8 +58,10 @@ namespace the_beautiful_figures
                 Random rnd = new Random();
                 Color randomColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
                 int n = new Random().Next(20, 170);
-                this.CreateGraphics().DrawRectangle(new Pen(randomColor, 4), new Rectangle(new Random().Next(0, this.Width), new Random().Next(0, this.Height), n, n));
+                this.CreateGraphics().DrawRectangle(new Pen(randomColor, 4), new Rectangle(new Random().Next(250, this.Width - 50), new Random().Next(0, this.Height - 50), n, n));
+                createdFig += 1;
                 Thread.Sleep(1000);
+               
             }
             MessageBox.Show("Completed visualisation of Square! Created squares " + randomNum);
         }
@@ -69,9 +75,9 @@ namespace the_beautiful_figures
                 Color randomColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
                 Pen randomPen = new Pen(randomColor, 4);
                 int n = new Random().Next(20, 170);
-                PointF point1 = new PointF(new Random().Next(0, this.Width) + new Random().Next(20, 170), new Random().Next(0, this.Height) + new Random().Next(20, 170));
-                PointF point2 = new PointF(new Random().Next(0, this.Width) + new Random().Next(20, 170), new Random().Next(0, this.Height) + new Random().Next(20, 170));
-                PointF point3 = new PointF(new Random().Next(0, this.Width) + new Random().Next(20, 170), new Random().Next(0, this.Height) + new Random().Next(20, 170));
+                PointF point1 = new PointF(new Random().Next(250, this.Width) + new Random().Next(20, 170), new Random().Next(0, this.Height - 50) + new Random().Next(20, 170));
+                PointF point2 = new PointF(new Random().Next(250, this.Width) + new Random().Next(20, 170), new Random().Next(0, this.Height - 50) + new Random().Next(20, 170));
+                PointF point3 = new PointF(new Random().Next(250, this.Width) + new Random().Next(20, 170), new Random().Next(0, this.Height - 50) + new Random().Next(20, 170));
                 PointF[] curvePoints =
                          {
                  point1,
@@ -80,6 +86,7 @@ namespace the_beautiful_figures
              };
 
                 this.CreateGraphics().DrawPolygon(randomPen, curvePoints);
+                createdFig += 1;
                 Thread.Sleep(2000);
             }
             MessageBox.Show("Completed visualisation of Triangle! Created triangles " + randomNum);
@@ -93,7 +100,8 @@ namespace the_beautiful_figures
                 Color randomColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
                 int b = new Random().Next(20, 170);
                 int n = new Random().Next(20, 170);
-                this.CreateGraphics().DrawRectangle(new Pen(randomColor, 4), new Rectangle(new Random().Next(0, this.Width), new Random().Next(0, this.Height), n, b));
+                this.CreateGraphics().DrawRectangle(new Pen(randomColor, 4), new Rectangle(new Random().Next(250, this.Width), new Random().Next(0, this.Height - 50), n, b));
+                createdFig += 1;
                 Thread.Sleep(3000);
             }
             MessageBox.Show("Completed visualisation of Rectangle! Created rectangle: " + randomNum);
@@ -107,15 +115,11 @@ namespace the_beautiful_figures
                 Random rnd = new Random();
                 Color randomColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
                 int n = new Random().Next(20, 170);
-                this.CreateGraphics().DrawEllipse(new Pen(randomColor, 4), new Random().Next(0, this.Width), new Random().Next(0, this.Height), n, n);
+                this.CreateGraphics().DrawEllipse(new Pen(randomColor, 4), new Random().Next(250, this.Width), new Random().Next(0, this.Height - 50), n, n);
+                createdFig += 1;
                 Thread.Sleep(4000);
             }
             MessageBox.Show("Completed visualisation of Circle! Created rectangle: " + randomNum);
-        }
-
-        private void btnRestart_Click(object sender, EventArgs e)
-        {
-            Application.Restart();
         }
     }
 }
