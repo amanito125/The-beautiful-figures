@@ -136,5 +136,10 @@ namespace the_beautiful_figures
         {
             MessageBox.Show("Count of all currently created figures: " + createdFig);
         }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

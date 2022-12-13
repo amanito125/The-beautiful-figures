@@ -36,6 +36,7 @@
             this.btnRestart = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCount = new System.Windows.Forms.Button();
+            this.btnStop = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,12 +126,24 @@
             this.btnCount.UseVisualStyleBackColor = true;
             this.btnCount.Click += new System.EventHandler(this.btnCount_Click);
             // 
+            // btnStop
+            // 
+            this.btnStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStop.Location = new System.Drawing.Point(12, 514);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(177, 63);
+            this.btnStop.TabIndex = 7;
+            this.btnStop.Text = "Stop generating";
+            this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1727, 755);
+            this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnCount);
             this.Controls.Add(this.btnTriangle);
             this.Controls.Add(this.btnRectangle);
@@ -161,5 +174,6 @@
         private PictureBox pictureBox1;
         private Button btnCount;
         private Label lblCount;
+        private Button btnStop;
     }
 }
